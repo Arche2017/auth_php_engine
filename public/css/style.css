@@ -1,0 +1,128 @@
+:root {
+  /*темно-синий основной*/
+  --dark-main-color:#0288D1;
+
+  /*светло-голубой дополительный*/
+  --light-additional-color:#B3E5FC;
+  /*основной фон*/
+  --main-background-color:#f5f4ed;
+  /*акцент оранж*/
+  --accent-color:#FF5722;
+  /*основной текст*/
+  --primary-text-color:#212121;
+  /*дополнительный текст*/
+  --secondary-text-color:#757575;
+  /*разделитель*/
+  --divider-color:rgba(34,36,38,.15);
+  /*ценовая полоса, заливка текста*/
+  --paint-text-color:#EEEEEE;
+  /*желтые значки*/
+  /*оранжевый*/
+  --orange-color:#facd00;
+  /*серые рамки*/
+  --border-color:#c0c0c0;
+  /*шрифт*/
+  --main-font:'Open Sans';
+  /*фон слайдера стр.объявления*/
+  --slider-background-color:#f7f7f7;
+
+  --green-color:#3ea55c;
+  /*тени*/
+  --shadow-color:#cdcdcd;
+  /*тень инпута*/
+  --box-shadow-input: 0 0 10px var(--orange-color);
+ }
+
+/* Мобильные устройства ----------- */
+@media only screen  and (min-width: 320px) {
+    .container{
+            margin: 0 auto;
+        }
+    .auth_block{
+        flex-direction: column;
+        justify-items: space-around;
+    }
+}
+/* Настольные компьютеры и ноутбуки ----------- */
+@media only screen  and (min-width: 1240px) {
+    .container{
+            margin: 0 auto;
+            width:1200px;
+        }
+    .auth_block{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .auth_block li{
+        width:40%;
+    }
+}
+
+
+body{
+    font-family: var(--main-font);
+}
+h2,p{
+    font-size: 3vw;
+    margin: 3vw 0;
+    padding: 0;
+    text-align: center;
+}
+a{
+    font-size: 2vw;
+}
+ul{
+    font-size: 2vw;
+    list-style: none;
+    padding:0;
+}
+.container{
+    padding: 5vw;
+    background-color: var(--main-background-color);
+}
+.auth_block{
+        display:flex;
+        justify-content: space-around;
+    }
+.auth_block li{
+        display:flex;
+        flex-direction:column;
+        margin-bottom:2vw;
+    }
+.auth_block label{
+        margin-bottom:1vw;
+}
+
+input{
+    font-size: 2vw;
+    height: 4vw;
+    padding:0.2vw 0.4vw;
+    border:1px solid var(--border-color);
+    border-radius: 0.5vw;
+
+}
+input:active, input:focus{
+    box-shadow: 0 0 10px var(--box-shadow-input);
+    outline:none;
+    border-color: var(--border-color);
+}
+.reg_btn{
+    width: 30%;
+    margin-left:35%;
+    height: 5vw;
+    margin-bottom:2vw;
+    background-color:#fff;
+    border-radius: 1vw;
+    border:1px solid var(--accent-color);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:var(--accent-color);
+    font-size: 1.9vw;
+}
+.reg_btn:hover{
+    cursor:pointer;
+    color:#fff;
+    background-color:var(--accent-color);
+}
