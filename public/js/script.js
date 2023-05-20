@@ -6,7 +6,6 @@ if(loginBtn){
 		let password = document.getElementById('password').value;
 		// Создаем экземпляр класса XMLHttpRequest
 		const request = new XMLHttpRequest();
-
 		// Указываем путь до файла на сервере, который будет обрабатывать наш запрос
 		const url = "login";
 
@@ -17,7 +16,6 @@ if(loginBtn){
 		асинхронный, по умолчанию так и есть не стоит его указывать, еще есть 4-й параметр пароль авторизации, но этот
 			параметр тоже необязателен.*/
 		request.open("POST", url, true);
-
 		//В заголовке говорим что тип передаваемых данных закодирован.
 		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
