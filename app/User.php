@@ -2,10 +2,11 @@
 namespace app;
 use app\Config;
 use PDO;
+//класс-модель для работы с БД
 class User{
     protected $connection;
     protected $table;
-
+//в конструкторе определяем название таблицы и реквизиты для подключения к БД
     public function __construct(){
         $this->table='users';
         $this->connection=new PDO(
@@ -16,6 +17,7 @@ class User{
             Config::DB_CREDENTIALS['password']
         );
     }
+//метод для получения всех записей из таблицы
     public function get()
     {
         try {
@@ -27,6 +29,7 @@ class User{
         }
 
     }
+//метод для поиска по логину, например если есть уже куки
     public function findByLogin($login)
     {
         try {
@@ -38,7 +41,7 @@ class User{
         }
 
     }
-
+//метод для поиска по логину и паролю
     public function find($data)
     {
         try {
@@ -50,7 +53,7 @@ class User{
         }
 
     }
-
+//метод для вставки записи
     public function insert($data)
     {
         if($this->findByLogin($data['login'])) return 'exists';

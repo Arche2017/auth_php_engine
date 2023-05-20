@@ -1,21 +1,25 @@
 <?php
-
+//класс для рендеринга страниц
 namespace app;
 
 class View
 {
+    //объявляем путь к файлу страницы
     public $path;
+    //название шаблона
     public $layout='app';
-
+    //основной метод
     public function render($page=null,$data=null)
     {
-        //если есть файл страницы в запросе
+        //открываем буфер
         ob_start();
+        //если есть файл страницы в запросе, то подгружаем его
         if($page&&file_exists('app/views/'.$page.'.php')) require 'app/views/'.$page.'.php';
-        //если не передана страница, то ищем по имени контроллера и action
-        elseif(file_exists('app/views/'.$this->view.'.php')) require 'app/views/'.$this->view.'.php';
+        //если нет выводим сообщение
         else echo 'вью не найден';
+        //сохраняем страницу в переменную
         $content=ob_get_clean();
+        //загружаем шаблон с переменной $content
         require_once 'app/views/layout.php';
     }
 }
