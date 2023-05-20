@@ -4,7 +4,6 @@ if(loginBtn){
 	document.getElementById('login_btn').onclick=function(){
 		let	login = document.getElementById('login').value;
 		let password = document.getElementById('password').value;
-
 		// Создаем экземпляр класса XMLHttpRequest
 		const request = new XMLHttpRequest();
 
